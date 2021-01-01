@@ -89,7 +89,7 @@
             query = query.toUpperCase();
             window.location = `${window.location.origin}/slangs#${query}`;
         });
-        $.getJSON( `https://cdn.jsdelivr.net/gh/ezealot/ezealot.github.io@latest/data/slangs/slangs.json`, function(data) {
+        $.getJSON( `https://raw.githubusercontent.com/ezealot/ezealot.github.io/main/data/slangs/slangs.json`, function(data) {
             let randNum = Math.floor(Math.random() * data.length) + 0;
             data = data[randNum];
             document.getElementById("slang").innerHTML=data.slang;
