@@ -89,7 +89,9 @@
             query = query.toUpperCase();
             window.location = `${window.location.origin}/slangs#${query}`;
         });
-        $.getJSON( `${window.location.origin}/api/getRandomSlangs`, function(data) {
+        $.getJSON( `https://cdn.jsdelivr.net/gh/ezealot/ezealot.github.io@latest/data/slangs/zealot-slangs.json`, function(data) {
+            let randNum = Math.floor(Math.random() * data.length) + 0;
+            data = data[randNum];
             document.getElementById("slang").innerHTML=data.slang;
             document.getElementById("acc_word").innerHTML= data.acc_word;
             document.getElementById("def").innerHTML=data.definition;
